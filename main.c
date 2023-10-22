@@ -13,8 +13,6 @@ int main(void)
 {
     InitWindow(800, 600, "Hello World!");
 
-    SetTargetFPS(60);
-
     emscripten_set_main_loop(update, 60, 1);
 
     CloseWindow();
