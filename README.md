@@ -11,4 +11,4 @@ Run `install-linux.sh` to:
 ## Building
 Enter the `src` directory and then run `make index.html` to build a WASM version of the program. The files will end up in `./src/build/`.
 
-You will need to [update](src/Makefile#L3) `src/Makefile` to include any C files you need compiled.  
+You will need to [update](src/Makefile#L4) `src/Makefile` to include any C files you need compiled.  
