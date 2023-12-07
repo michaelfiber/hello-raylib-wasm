@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="EN-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>hello raylib wasm</title>
+    <style>
+        body { margin: 0px; }
+        canvas.emscripten { border: 0px none; background-color: black; }
+        #print { display: none; }
+    </style>
+    </head>
+    <body>
+        <canvas class=emscripten id=canvas oncontextmenu=event.preventDefault() tabindex=-1></canvas>
+        <p id="output" />
+        <script>
+            var Module = {
+                print: (function() {
+                    var element = document.getElementById('output');
+                    if (element) element.value = ''; // clear browser cache
+                    return function(text) {
+                        if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+                        console.log(text);
+                        if (element) {
+                          element.value += text + "\n";
+                          element.scrollTop = element.scrollHeight; // focus on bottom
+                        }
+                    };
+                })(),
+                canvas: (function() {
+                    var canvas = document.getElementById('canvas');
+                    return canvas;
+                })()
+            };
+        </script>
+        {{{ SCRIPT }}}
+    </body>
+</html>
