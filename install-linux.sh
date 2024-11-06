@@ -9,8 +9,8 @@ unzip -d emsdk main.zip
 rm main.zip
 
 pushd emsdk/emsdk-main > /dev/null
-./emsdk install latest
-./emsdk activate latest
+./emsdk install 2ce4170cef5ce46f337f9fd907b614a8db772c7d
+./emsdk activate 2ce4170cef5ce46f337f9fd907b614a8db772c7d
 popd > /dev/null
 
 # Download unzip WASM nightly build of libraylib.a and raylib.h into src/external
